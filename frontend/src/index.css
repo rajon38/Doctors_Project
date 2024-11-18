@@ -12,7 +12,7 @@
     }
 
     .heading{
-        @apply text-[44px] leading-[54px] font-[700] text-headingColor
+        @apply text-[44px] leading-[54px] font-[700] text-headingColor pt-[60px]
     }
 
     .text_para{
