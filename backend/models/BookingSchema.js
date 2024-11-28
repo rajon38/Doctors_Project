@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require ("mongoose");
 
 const bookingSchema = new mongoose.Schema(
   {
@@ -27,7 +27,7 @@ const bookingSchema = new mongoose.Schema(
       default: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true , versionKey: false }
 );
 
-export default mongoose.model("Booking", bookingSchema);
+module.exports =  mongoose.model("Booking", bookingSchema);

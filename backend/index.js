@@ -1,8 +1,12 @@
-import express from "express";
-import cookieParser from "cookie-parser";
-import cors from 'cors';
-import mongoose from "mongoose";
-import dotenv from 'dotenv';
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const cors = require('cors');
+const mongoose = require("mongoose");
+const dotenv = require('dotenv');
+const authRoute = require('./Routes/auth.js');
+const userRoute = require('./Routes/user.js');
+const doctorRoute = require('./Routes/doctor.js');
+const reviewRoute = require('./Routes/review.js');
 
 dotenv.config();
 
@@ -32,6 +36,10 @@ mongoose
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
+app.use('/api/v1/auth', authRoute);
+app.use('/api/v1/users', userRoute);
+app.use('/api/v1/doctors', doctorRoute);
+app.use('/api/v1/reviews', reviewRoute);
 
 
 app.listen(port, ()=>{
