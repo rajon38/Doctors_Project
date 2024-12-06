@@ -58,7 +58,7 @@ exports.getAllDoctor = async (req, res) =>{
 }
 
 exports.getDoctorProfile = async(req, res) =>{
-    const doctorId = req.userId
+    const doctorId = req.headers.id
 
     try {
         const doctor = await Doctor.findById(doctorId)

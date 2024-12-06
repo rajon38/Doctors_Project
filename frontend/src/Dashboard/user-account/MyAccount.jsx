@@ -4,7 +4,7 @@ import Profile from './Profile';
 import MyBookings from './MyBookings';
 import userGetProfile from '../../hooks/useFetchData';
 import { BASE_URL } from '../../config';
-import Loading from '../../components/loader/Loading';
+import Loading from '../../components/Loader/Loading';
 import Error from '../../components/Error/Error';
 
 
@@ -12,7 +12,9 @@ const MyAccount = () => {
     const { dispatch } = useContext(authContext)
     const [tab, setTab] = useState('bookings');
 
-    const {data:userData, loading, error } = userGetProfile(`${BASE_URL}/users/profile/me`);
+    const {data:userData, loading, error } = userGetProfile(
+        `${BASE_URL}/users/profile/me`
+    );
     
 
     const handleLogout = () =>{
